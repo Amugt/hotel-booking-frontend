@@ -317,6 +317,7 @@ h1, h2, h3, h4, h5, h6 {
   #hero .hero-img img {
     width: 80%;
   }
+ 
 }
 
 
@@ -374,14 +375,12 @@ section {
 /*--------------------------------------------------------------
 # topDestinations
 --------------------------------------------------------------*/
-.topDestinations {
-
+.topDestinations .card{
+  min-width:250px;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
-.city{
-  display: inline-block;
-
-}
 
 
 
@@ -433,6 +432,9 @@ section {
 
 
 }
+
+
+
 
 .book{
 
