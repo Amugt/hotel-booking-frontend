@@ -377,8 +377,12 @@ section {
 --------------------------------------------------------------*/
 .topDestinations .card{
   min-width:250px;
-  margin-right: 5px;
-  margin-left: 5px;
+  margin-right: 3px;
+  margin-left: 2px;
+}
+
+.topDestinations::-webkit-scrollbar{
+  display:none;
 }
 
 
@@ -482,6 +486,14 @@ section {
 .my-booking h4 span {
   color: rgba(108, 117, 125, 0.8);
   font-size: 18px;
+}
+
+.pay-img{
+  width:100px;
+ height:100px;
+
+ top:0;
+
 }
 
 

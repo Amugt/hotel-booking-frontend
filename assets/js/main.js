@@ -76,9 +76,6 @@
     onscroll(document, toggleBacktotop)
   }
 
-  /**
-   * Mobile nav toggle
-   */
   on('click', '.mobile-nav-toggle', function(e) {
     select('#navbar').classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
@@ -113,9 +110,7 @@
     }
   }, true)
 
-  /**
-   * Scroll with ofset on page load with hash links in the url
-   */
+
   window.addEventListener('load', () => {
     if (window.location.hash) {
       if (select(window.location.hash)) {
