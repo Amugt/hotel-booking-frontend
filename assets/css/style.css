@@ -2,6 +2,7 @@
 body {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   color: #29292b;
+  background-color: whitesmoke;
 }
 
 a {
@@ -258,6 +259,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   overflow: hidden;
   padding: 30px 0 20px 0;
+  background-color: white;
 }
 
 #hero h1 {
@@ -318,10 +320,16 @@ h1, h2, h3, h4, h5, h6 {
     width: 80%;
   }
  
+ 
 }
 
 
 /* search hotel*/
+
+.search-hotel-section {
+  padding: 0 0 !important;
+}
+
 
 .search-hotel {
   display:flex;
@@ -331,16 +339,157 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #6189da;
   text-align: center;
   
-  height:280px;
-}
-.form-control-borderless {
-  border: none;
+  height:265px;
 }
 
-.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
-  border: none;
-  outline: none;
+
+@media (max-width: 575px) {
+ 
+  .search-hotel {
+    height:200px;
+  }
+ 
+}
+
+
+.inner-form {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 34px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.inner-form .input-field {
+  height: 68px;
+}
+
+.inner-form .input-field input {
+  height: 100%;
+  background: transparent;
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #000;
+}
+
+.inner-form .input-field input.placeholder {
+  color: #222;
+  font-size: 16px;
+}
+
+.inner-form .input-field input:-moz-placeholder {
+  color: #222;
+  font-size: 16px;
+}
+
+.inner-form .input-field input::-webkit-input-placeholder {
+  color: #222;
+  font-size: 16px;
+}
+
+.inner-form .input-field input:hover, .inner-form .input-field input:focus {
   box-shadow: none;
+  outline: 0;
+}
+
+.inner-form .input-field.first-wrap {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  background: #ececec;
+}
+
+.inner-form .input-field.first-wrap input {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.inner-form .input-field.first-wrap .svg-wrapper {
+  min-width: 80px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+
+
+.inner-form .input-field.second-wrap {
+  min-width: 216px;
+}
+
+.inner-form .input-field.second-wrap .btn-search {
+  height: 100%;
+  width: 100%;
+  white-space: nowrap;
+  font-size: 16px;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  background:  #0d6efd;
+  transition: all .2s ease-out, color .2s ease-out;
+  font-weight: 300;
+}
+
+.inner-form .input-field.second-wrap .btn-search:hover {
+  background:  #0b5ed7;
+}
+
+.inner-form .input-field.second-wrap .btn-search:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+.info {
+  font-size: 15px;
+  color: #ccc;
+  padding-left: 26px;
+}
+
+@media screen and (max-width: 992px) {
+  .inner-form .input-field {
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .inner-form .input-field.first-wrap .svg-wrapper {
+    min-width: 40px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    padding: 0 10px;
+  }
+  .inner-form .input-field.first-wrap svg {
+    width: 26px;
+    height: 26px;
+    fill: #222;
+  }
+  .inner-form .input-field.second-wrap {
+    min-width: 100px;
+  }
+  .inner-form .input-field.second-wrap .btn-search {
+    font-size: 13px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -384,6 +533,10 @@ section {
 .topDestinations::-webkit-scrollbar{
   display:none;
 }
+.city-photo{
+  width:100%;
+  height:175px;
+}
 
 
 
@@ -393,21 +546,34 @@ section {
 .hotel-photo{
   width:100%;
   height: 200px;
-
+ 
 }
 
-.card-img *{
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 80%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
+.skeleton{
   background:linear-gradient(    120deg,    #e5e5e5 30%,    #fefefe 38%,    #fefefe 40%,    #e5e5e5 48%  );
   background-size: 200% 100%;
-  animation:load 2s infinite ;
-  -webkit-animation:load 2s infinite ;
+  animation:load 1.5s infinite alternate;
+  -webkit-animation:load 1.5s infinite alternate;
 }
 
 @keyframes load{
+  
    100%{
-    background: -100% 0;
+    background: -200% 0;
    }
 }
+
+
+
 
 
 
