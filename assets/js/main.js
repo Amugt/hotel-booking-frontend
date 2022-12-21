@@ -121,3 +121,45 @@
 
 
 })()
+
+
+//checkin checkout
+
+function convertToISO(timebit) {
+  timebit.setHours(0, -timebit.getTimezoneOffset(), 0, 0);
+  // remove GMT offset
+  var isodate = timebit.toISOString().slice(0, 10);
+  // format convert and take first 10 characters of result
+  return isodate;
+}
+var checkin = document.getElementById('checkin'),
+  currentdate = new Date();
+checkin.min = convertToISO(currentdate);
+checkin.placeholder = checkin.min;
+var futuredate = new Date();
+futuredate.setDate(futuredate.getDate() + 7);
+// go forward 7 days into the future
+checkin.max = convertToISO(futuredate);
+
+var checkin = document.getElementById('checkout'),
+  currentdate = new Date();
+checkout.min = convertToISO(currentdate);
+checkout.placeholder = checkout.min;
+var checkoutfuture = new Date();
+checkoutfuture.setDate(checkoutfuture.getDate() + 14);
+
+checkout.max = convertToISO(checkoutfuture);
+
+
+$(document).ready(function() {
+  $('.count').prop('disabled', false);
+  $(document).on('click', '.plus', function() {
+      $('.count').value(parseInt($('.count').value()) + 1);
+  });
+  $(document).on('click', '.minus', function() {
+      $('.count').value(parseInt($('.count').value()) - 1);
+      if ($('.count').value() == 0) {
+          $('.count').value(1);
+      }
+  });
+});
