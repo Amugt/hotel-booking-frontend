@@ -151,15 +151,3 @@ checkoutfuture.setDate(checkoutfuture.getDate() + 14);
 checkout.max = convertToISO(checkoutfuture);
 
 
-$(document).ready(function() {
-  $('.count').prop('disabled', false);
-  $(document).on('click', '.plus', function() {
-      $('.count').value(parseInt($('.count').value()) + 1);
-  });
-  $(document).on('click', '.minus', function() {
-      $('.count').value(parseInt($('.count').value()) - 1);
-      if ($('.count').value() == 0) {
-          $('.count').value(1);
-      }
-  });
-});
