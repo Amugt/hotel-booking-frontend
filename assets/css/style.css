@@ -748,5 +748,11 @@ height: 100%;
   header {
   display: none !important;  
   }
+  .my-booking{
+    padding-top:0;
+  }
+  .my-profile{
+    padding-top:0;
+  }
 
 }
