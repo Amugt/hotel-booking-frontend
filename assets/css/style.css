@@ -762,3 +762,48 @@ height: 100%;
 .bottomicons i{
 
 }
+
+.bank-logo{
+  height: 27px;
+  width: 27px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.paywithcard{
+ 
+}
+
+
+.bank-names{
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: whitesmoke;
+  color:#07689F;
+ 
+}
+
+.bank-names span{
+  color:#222;
+}
+
+.bank-names .active{
+  color:#07689F;
+}
+
+.bank-names hr{
+  border:0.5px solid gray;
+}
+
+.payment-info{
+  border-top-right-radius: 15px;
+  border-bottom-right-radius:15px;
+  background-color: white;
+}
+
+.payment-info p{
+  color:#07689F;
+}
